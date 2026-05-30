@@ -15,12 +15,20 @@
 
 ---
 
+## 🔐 보안 & 환경 변수 (.env)
+* **API Key 보안**: NOWPayments 암호화폐 기부용 API 키는 프로젝트 루트의 `.env` 파일에 보관되며, `.gitignore`에 등록되어 GitHub 원격 저장소에는 업로드되지 않습니다.
+  - 변수명: `VITE_NOWPAYMENTS_API_KEY`
+  - 배포 시에는 로컬에서 `npm run deploy` 실행 시 Vite 빌드 단계를 통해 실제 키값으로 안전하게 치환되어 `dist/` 배포 자산에 빌드 인라인 처리됩니다.
+
+---
+
 ## 🛠️ 핵심 파일 구조 & 역할
 
 * **`index.html`**: 브라우저 기본 타이틀을 `fakeCLI`로 설정.
 * **`src/App.jsx`**:
   - 인트로 화면 렌더링 및 다국어 스위칭 제어.
   - 기본 활성 언어: 영어(`en`)
+  - NOWPayments 기부 공식 버튼 이미지 링크 마크업 및 번역 지원.
   - 가상 파일 시스템(`files`) 상태 및 가짜 리팩토링/에러 버전 코드 스위칭 관리.
 * **`src/components/Terminal.jsx`**:
   - **Claude Code**와 **Antigravity CLI** 모드의 가짜 명령어 라우팅 통합 처리.
@@ -37,6 +45,7 @@
 * **`src/index.css`**:
   - 글래스모피즘(반투명 아크릴 블러) 디자인 시스템.
   - 인트로 카드가 영문 텍스트 길이에 맞춰 유연하게 높이를 갖도록 `min-height: 250px` 기반 CSS Grid 구축.
+  - NOWPayments 기부 이미지 버튼 스케일 확대 및 은은한 백색 글로우 호버 스타일 적용.
 
 ---
 
@@ -51,7 +60,7 @@
 
 ## 🔄 유지보수 & 배포 명령어 (CLI)
 ```bash
-# 1. 의존성 설치 및 로컬 구동
+# 1. 의존성 설치 및 로컬 구동 (로컬에 .env 생성 필수)
 npm install
 npm run dev
 
