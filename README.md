@@ -14,9 +14,9 @@
 
 ## 🌟 Introduction (소개)
 
-**fakeCLI** is a humor-oriented web-based coding simulator designed for developers, engineers, and office workers. It simulates terminal-based AI coding agents (**Claude Code** and **Antigravity CLI** by Google DeepMind) to make you look incredibly busy and hard-working in public or office environments.
+**fakeCLI** is a humor-oriented web-based coding simulator designed for developers, engineers, and office workers. It simulates terminal-based AI coding agents (**Claude Code**, **ChatGPT / GPT CLI**, **Gemini**, and **Antigravity CLI** by Google DeepMind) to make you look incredibly busy and hard-working in public or office environments. Try the high-speed **Vibe Coding** simulator mode to instantly stream trace logs!
 
-**fakeCLI**는 사무실이나 공공장소에서 주변의 눈치를 보지 않고 열심히 일하는 것처럼 위장(Camouflage)할 수 있는 유머 목적의 웹 코딩 시뮬레이터입니다. 최신 AI 코딩 에이전트(**Claude Code** 및 **Antigravity CLI**)의 터미널 UI와 자동 소스 코드 타이핑 흐름을 실감 나게 구현하였습니다.
+**fakeCLI**는 사무실이나 공공장소에서 주변의 눈치를 보지 않고 열심히 일하는 것처럼 위장(Camouflage)할 수 있는 유머 목적의 웹 코딩 시뮬레이터입니다. 최신 AI 코딩 에이전트(**Claude Code**, **ChatGPT / GPT**, **Gemini**, **Antigravity CLI**)의 터미널 UI 및 **Vibe Coding (바이브 코딩)** 모드의 폭풍 터미널 로그 스트리밍과 자동 소스 코드 타이핑 흐름을 실감 나게 구현하였습니다.
 
 > 🔒 **Privacy Safeguard**: Once you click a mode and enter the main simulation (VS Code Layout UI), all references to the word "fake" or "simulation" are completely hidden from the screen, ensuring absolute camouflage.
 > 
