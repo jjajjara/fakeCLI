@@ -31,7 +31,10 @@ const TRANSLATIONS = {
     cardBtn: "구동하기",
     donationTitle: "☕ 개발자에게 따뜻한 커피 한 잔 선물하기 (암호화폐 후원)",
     footer: "© 2026 fakeCLI. 회사 업무 보안 위장 전용 툴킷.",
-    disclaimer: "⚠️ 본 사이트는 학습 및 유머 목적으로 제작된 비상업적 시뮬레이터이며, Anthropic 또는 Google DeepMind와 어떠한 제휴나 관계도 없는 개인의 창작 프로젝트입니다."
+    disclaimer: "⚠️ 본 사이트는 학습 및 유머 목적으로 제작된 비상업적 시뮬레이터이며, Anthropic 또는 Google DeepMind와 어떠한 제휴나 관계도 없는 개인의 창작 프로젝트입니다.",
+    mobileWarnTitle: "⚠️ PC / 태블릿 접속 권장",
+    mobileWarnDesc: "본 서비스는 직장인(Office Worker)을 위한 화면 보안 위장(Camouflage) 시뮬레이터입니다. 모바일 해상도에서는 VS Code 화면이 찌그러져 위장 효과가 떨어질 수 있으니, 완벽한 몰입을 위해 PC나 태블릿 기기로 접속해 주세요.",
+    mobileWarnBtn: "이해했으며 계속 진행하기"
   },
   en: {
     introTitle: "fakeCLI - Work Camouflage Coding Simulator",
@@ -44,7 +47,10 @@ const TRANSLATIONS = {
     cardBtn: "Launch",
     donationTitle: "☕ Buy the Developer a Coffee (Crypto Donation)",
     footer: "© 2026 fakeCLI. Exclusive office work camouflage toolkit.",
-    disclaimer: "⚠️ This site is a non-commercial simulator created for educational and entertainment purposes. It is an independent project with no official affiliation with Anthropic or Google DeepMind."
+    disclaimer: "⚠️ This site is a non-commercial simulator created for educational and entertainment purposes. It is an independent project with no official affiliation with Anthropic or Google DeepMind.",
+    mobileWarnTitle: "⚠️ PC / Tablet Recommended",
+    mobileWarnDesc: "This service is a screen camouflage simulator designed for office workers. Due to size limits on mobile screens, the VS Code UI may not fit correctly. For the best camouflage effect, please access from a PC or Tablet.",
+    mobileWarnBtn: "Proceed Anyway"
   }
 };
 
@@ -78,9 +84,18 @@ function App() {
   // F11 전체화면 권장 알림창 상태
   const [isFullscreen, setIsFullscreen] = useState(false);
 
+  // 모바일 접속 권장 모달 상태
+  const [showMobileModal, setShowMobileModal] = useState(false);
+
   // 초기화 (OS 감지 및 랜덤 워크스페이스 선정)
   useEffect(() => {
     setOsType(detectOS());
+
+    // 모바일 기기 접속 검출 (너비 768px 미만 혹은 userAgent)
+    const isMobile = window.innerWidth < 768 || /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+    if (isMobile) {
+      setShowMobileModal(true);
+    }
 
     const randomIdx = Math.floor(Math.random() * PROJECT_NAMES.length);
     const chosenProject = PROJECT_NAMES[randomIdx];
@@ -383,6 +398,22 @@ function App() {
               {t.footer}
             </div>
           </div>
+
+          {/* 모바일 기기 접속 경고 모달 */}
+          {showMobileModal && (
+            <div className="mobile-modal-overlay">
+              <div className="mobile-modal-content">
+                <h3>{t.mobileWarnTitle}</h3>
+                <p>{t.mobileWarnDesc}</p>
+                <button 
+                  onClick={() => setShowMobileModal(false)} 
+                  className="mobile-modal-btn"
+                >
+                  {t.mobileWarnBtn}
+                </button>
+              </div>
+            </div>
+          )}
 
         </div>
       </div>

@@ -310,5 +310,82 @@ html, body, #root {
   display: block;
 }
 
+/* 모바일 기기 권장 팝업 스타일 */
+.mobile-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.mobile-modal-content {
+  background: rgba(30, 30, 30, 0.75);
+  border: 1px solid rgba(217, 119, 86, 0.25); /* 클로드 포인트 컬러 */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  padding: 28px;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  backdrop-filter: blur(15px);
+  animation: scaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mobile-modal-content h3 {
+  font-size: 18px;
+  color: var(--txt-light);
+  margin-bottom: 12px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.mobile-modal-content p {
+  font-size: 13px;
+  color: var(--txt-muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.mobile-modal-btn {
+  background: linear-gradient(135deg, var(--color-claude), #d97756);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(217, 119, 86, 0.25);
+}
+
+.mobile-modal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(217, 119, 86, 0.4);
+}
+
+.mobile-modal-btn:active {
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
 
 
