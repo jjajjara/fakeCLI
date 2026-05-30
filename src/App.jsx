@@ -61,7 +61,7 @@ function App() {
   const [activeMode, setActiveMode] = useState('intro');
   const [workspaceName, setWorkspaceName] = useState('enterprise-portal-service');
   const [osType, setOsType] = useState('windows');
-  const [lang, setLang] = useState('ko'); // 기본 언어: 한국어
+  const [lang, setLang] = useState('en'); // 기본 언어: 영어
   
   // 가상 파일 시스템 상태
   const [files, setFiles] = useState({});
