@@ -15,6 +15,15 @@
 
 ---
 
+## 🔍 검색엔진 최적화 (SEO)
+* **타겟 키워드**: `claude`, `chatgpt`, `gemini`, `antigravity`, `vibe`, `CLI`, `vibecoding`
+* **메타 데이터**: `index.html`에 다수의 메타 태그, 키워드 목록, OpenGraph, canonical 태그 적용 완료.
+* **크롤러 규칙 및 사이트맵**:
+  - `public/robots.txt`를 통해 모든 크롤러 검색봇의 수집을 허용하고 사이트맵 자동 제출 등록 완료.
+  - `public/sitemap.xml`을 생성하여 배포 도메인의 정적 사이트맵을 탑재 완료.
+
+---
+
 ## 🔐 보안 & 환경 변수 (.env)
 * **API Key 보안**: NOWPayments 암호화폐 기부용 API 키는 프로젝트 루트의 `.env` 파일에 보관되며, `.gitignore`에 등록되어 GitHub 원격 저장소에는 업로드되지 않습니다.
   - 변수명: `VITE_NOWPAYMENTS_API_KEY`
@@ -24,28 +33,23 @@
 
 ## 🛠️ 핵심 파일 구조 & 역할
 
-* **`index.html`**: 브라우저 기본 타이틀을 `fakeCLI`로 설정.
+* **`index.html`**: 브라우저 기본 타이틀을 `fakeCLI` 기반 SEO 타이틀로 설정 및 메타 태그 삽입.
 * **`src/App.jsx`**:
-  - 인트로 화면 렌더링 및 다국어 스위칭 제어.
-  - 기본 활성 언어: 영어(`en`)
+  - 인트로 화면 렌더링 및 다국어 스위칭 제어 (기본 영어 `en` 활성).
   - NOWPayments 기부 공식 버튼 이미지 링크 마크업 및 번역 지원.
   - 가상 파일 시스템(`files`) 상태 및 가짜 리팩토링/에러 버전 코드 스위칭 관리.
 * **`src/components/Terminal.jsx`**:
-  - **Claude Code**와 **Antigravity CLI** 모드의 가짜 명령어 라우팅 통합 처리.
-  - 디버그(`debug`), AI 분석(`ai [task]`), 쉘 프롬프트, 7단계 장기 디버깅 스케줄러 구현.
-  - TUI 맞춤형 테두리 분기 렌더링 (Claude: `╔══` 굵은선 / Antigravity: `┌──` 얇은선).
+  - **Claude Code**와 **Antigravity CLI** 모드의 가짜 명령어 라우팅 통합 처리 (debug, ai, vibe).
+  - TUI 맞춤형 테두리 분기 렌더링 (Claude: `╔══` / Antigravity: `┌──`).
   - 스피너 타이머 해제 레퍼런스(`claudeAiIntervalRef`)를 통한 ESC 중단 제어.
 * **`src/components/Editor.jsx`**:
-  - 에디터 내 소스 코드 자동 타이핑 효과 렌더러.
-  - Vibe(폭풍 코딩) 모드 시 `[HMR]` 문구 위장 안내창(2초 노출 후 페이드아웃) 및 배경 코드 스트리밍.
+  - 에디터 내 소스 코드 자동 타이핑 효과 및 Vibe(폭풍 코딩) 모드 HMR 위장 오버레이 처리.
   - ESC 및 Ctrl+C 포커스 감지를 통한 Vibe 긴급 중단(Abort) 제어.
 * **`src/fakeCodeTemplates.js`**:
-  - 다국어(영/한) 가상 소스코드 리소스 데이터베이스.
-  - 100줄 이상의 가짜 Java Spring Boot 실무 코드 3종 포함 (`PortalApplication.java` 등).
+  - 다국어(영/한) 가상 소스코드 리소스 데이터베이스 (100줄 이상의 가짜 Java Spring Boot 실무 코드 3종 포함).
 * **`src/index.css`**:
   - 글래스모피즘(반투명 아크릴 블러) 디자인 시스템.
   - 인트로 카드가 영문 텍스트 길이에 맞춰 유연하게 높이를 갖도록 `min-height: 250px` 기반 CSS Grid 구축.
-  - NOWPayments 기부 이미지 버튼 스케일 확대 및 은은한 백색 글로우 호버 스타일 적용.
 
 ---
 
