@@ -289,5 +289,26 @@ html, body, #root {
   margin-top: 16px;
 }
 
+.nowpayments-donation-wrapper {
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.nowpayments-btn {
+  display: inline-block;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease;
+  cursor: pointer;
+}
+
+.nowpayments-btn:hover {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.25));
+}
+
+.nowpayments-btn img {
+  height: 42px;
+  display: block;
+}
+
 
 

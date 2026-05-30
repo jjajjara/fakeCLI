@@ -29,7 +29,7 @@ const TRANSLATIONS = {
     antigravityCardTitle: "AntigravityCLI",
     antigravityCardDesc: "Google DeepMind의 키보드 지향 TUI 모니터링 환경을 모사합니다. 병렬 에이전트 대시보드 상태 및 대량의 컴파일/테스트 트레이스 로그를 출력합니다.",
     cardBtn: "구동하기",
-    donationMuted: "※ 기부 기능은 추후 추가 예정입니다. (일하는 척해 주셔서 감사합니다!)",
+    donationTitle: "☕ 개발자에게 따뜻한 커피 한 잔 선물하기 (암호화폐 후원)",
     footer: "© 2026 fakeCLI. 회사 업무 보안 위장 전용 툴킷.",
     disclaimer: "⚠️ 본 사이트는 학습 및 유머 목적으로 제작된 비상업적 시뮬레이터이며, Anthropic 또는 Google DeepMind와 어떠한 제휴나 관계도 없는 개인의 창작 프로젝트입니다."
   },
@@ -42,7 +42,7 @@ const TRANSLATIONS = {
     antigravityCardTitle: "AntigravityCLI",
     antigravityCardDesc: "Simulate Google DeepMind's keyboard-driven TUI console. Display parallel agent dashboards and stream large amounts of compilation/test logs.",
     cardBtn: "Launch",
-    donationMuted: "※ Donation option will be available in the future. (Thanks for acting like you're working!)",
+    donationTitle: "☕ Buy the Developer a Coffee (Crypto Donation)",
     footer: "© 2026 fakeCLI. Exclusive office work camouflage toolkit.",
     disclaimer: "⚠️ This site is a non-commercial simulator created for educational and entertainment purposes. It is an independent project with no official affiliation with Anthropic or Google DeepMind."
   }
@@ -358,9 +358,27 @@ function App() {
             <div style={{ color: 'rgba(217, 119, 86, 0.45)', fontSize: '11px', marginBottom: '16px', padding: '0 20px', lineHeight: '1.5' }}>
               {t.disclaimer}
             </div>
-            <div style={{ color: 'var(--txt-muted)', fontSize: '12px', marginBottom: '12px', fontStyle: 'italic' }}>
-              {t.donationMuted}
+            
+            {/* NOWPayments 기부 링크 탑재 */}
+            <div style={{ marginBottom: '18px' }}>
+              <p style={{ color: 'var(--txt-muted)', fontSize: '12px', marginBottom: '8px', fontWeight: '500' }}>
+                {t.donationTitle}
+              </p>
+              <div className="nowpayments-donation-wrapper">
+                <a 
+                  href={`https://nowpayments.io/donation?api_key=${import.meta.env.VITE_NOWPAYMENTS_API_KEY || ''}`} 
+                  target="_blank" 
+                  rel="noreferrer noopener"
+                  className="nowpayments-btn"
+                >
+                  <img 
+                    src="https://nowpayments.io/images/embeds/donation-button-white.svg" 
+                    alt="Cryptocurrency & Bitcoin donation button by NOWPayments" 
+                  />
+                </a>
+              </div>
             </div>
+
             <div style={{ color: 'var(--txt-muted)', fontSize: '12px' }}>
               {t.footer}
             </div>
