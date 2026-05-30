@@ -15,12 +15,14 @@
 
 ---
 
-## 🔍 검색엔진 최적화 (SEO)
+## 🔍 검색엔진 최적화 (SEO) & 트래픽 분석
 * **타겟 키워드**: `claude`, `chatgpt`, `gemini`, `antigravity`, `vibe`, `CLI`, `vibecoding`
 * **메타 데이터**: `index.html`에 다수의 메타 태그, 키워드 목록, OpenGraph, canonical 태그 적용 완료.
 * **크롤러 규칙 및 사이트맵**:
   - `public/robots.txt`를 통해 모든 크롤러 검색봇의 수집을 허용하고 사이트맵 자동 제출 등록 완료.
   - `public/sitemap.xml`을 생성하여 배포 도메인의 정적 사이트맵을 탑재 완료.
+* **방문자 분석 (Analytics)**:
+  - `index.html` 최하단에 Cloudflare Web Analytics 추적 코드 연동 완료. (Token: `db71ed8f92a841549040d20bb0e1944c`)
 
 ---
 
@@ -33,7 +35,7 @@
 
 ## 🛠️ 핵심 파일 구조 & 역할
 
-* **`index.html`**: 브라우저 기본 타이틀을 `fakeCLI` 기반 SEO 타이틀로 설정 및 메타 태그 삽입.
+* **`index.html`**: 브라우저 기본 타이틀을 `fakeCLI` 기반 SEO 타이틀로 설정, 메타 태그 및 클라우드플레어 애널리틱스 스크립트 적용.
 * **`src/App.jsx`**:
   - 인트로 화면 렌더링 및 다국어 스위칭 제어 (기본 영어 `en` 활성).
   - NOWPayments 기부 공식 버튼 이미지 링크 마크업 및 번역 지원.
